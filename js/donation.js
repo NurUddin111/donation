@@ -11,3 +11,10 @@ document.getElementById('donate-now-for-quota-movement-injured').addEventListene
 });
 
 
+document.getElementById('btn-history').addEventListener('click',function(){
+    showDonationHistory();
+})
+
+document.getElementById('btn-donate').addEventListener('click',function(){
+    showDonationCategory();
+})

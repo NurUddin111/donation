@@ -3,6 +3,22 @@ let totalDonationForNoakhali = Number(document.getElementById('noakhali-total-do
 let totalDonationForFeni = Number(document.getElementById('feni-total-donation').innerText);
 let totalDonationForQuotaMovementInjured = Number(document.getElementById('quota-movement-total-donation').innerText);
 
+function donationHistory(amountOfDonation, atWhere) {
+    let allHistory = document.getElementById('history-section');
+    let newDiv = document.createElement('div');
+    newDiv.setAttribute("class", "border-slate-300 border-2 border-solid p-4 w-full rounded-lg space-y-5");
+    let donationTitle = document.createElement('h1');
+    donationTitle.setAttribute("class", "text-xl font-bold");
+    donationTitle.innerText = amountOfDonation + atWhere;
+    let donationTime = document.createElement('p');
+    donationTime.setAttribute("class", "text-base");
+    const currentTime = new Date().toString();
+    donationTime.innerText = "Date : " + currentTime;
+    newDiv.appendChild(donationTitle);
+    newDiv.appendChild(donationTime);
+    allHistory.appendChild(newDiv);
+}
+
 function donationCounterNoakhali(balance, donation) {
     let donationForNoakhali = Number(document.getElementById("noakhali-donation-amount").value);
     if (donationForNoakhali == '' || donationForNoakhali <= 0) {
@@ -18,6 +34,8 @@ function donationCounterNoakhali(balance, donation) {
     totalDonationForNoakhali = donation;
     document.getElementById("noakhali-donation-amount").value = '';
     totalBalance = balance;
+    const atNoakhali = " Taka is Donated for flood-relief at Noakhali, Bangladesh"
+    donationHistory(donationForNoakhali, atNoakhali);
     my_modal_5.showModal()
 }
 
@@ -36,6 +54,8 @@ function donationCounterFeni(balance, donation) {
     totalDonationForFeni = donation;
     document.getElementById("feni-donation-amount").value = '';
     totalBalance = balance;
+    const atFeni = " Taka is Donated for flood-relief at Feni, Bangladesh"
+    donationHistory(donationForFeni, atFeni);
     my_modal_5.showModal()
 }
 
@@ -54,6 +74,21 @@ function donationCounterQuota(balance, donation) {
     totalDonationForQuotaMovementInjured = donation;
     document.getElementById("donation-amount-for-quota-movement-injured").value = '';
     totalBalance = balance;
+    const atQuotaMovement = " Taka is Donated for Aid for Injured in the Quota Movement, Bangladesh"
+    donationHistory(donationForQuotaMovementInjured, atQuotaMovement);
     my_modal_5.showModal()
+}
+
+// Donation History 
+function showDonationHistory() {
+    document.getElementById('donation-section').classList.add("hidden");
+    document.getElementById('history-section').classList.remove("hidden");
+}
+
+// Donation Category
+
+function showDonationCategory() {
+    document.getElementById('donation-section').classList.remove("hidden");
+    document.getElementById('history-section').classList.add("hidden");
 }
 
