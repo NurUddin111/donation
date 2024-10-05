@@ -53,9 +53,9 @@
     </style>
   </head>
   <body>
-    <header>
+    <header class="sticky top-0">
       <nav>
-        <div class="flex justify-around bg-[#F9F7F3] p-6">
+        <div class="flex justify-around bg-[#f5eddf] p-6">
           <div class="bg-bgPrimary p-4 w-max rounded-lg">
             <h1 class="text-3xl font-bold">Blog</h1>
           </div>
@@ -70,27 +70,26 @@
             </h1>
           </div>
         </div>
-      </nav>
-    </header>
-
-    <main>
-      <section>
         <!--Donation and History Buttons -->
-        <div class="flex gap-4 justify-center mt-10">
+        <div class="bg-[#f4f3f2] flex gap-4 justify-center pb-5 pt-5">
           <button
             id="btn-donate"
-            class="bg-bgPrimary p-4 w-max rounded-lg text-xl font-bold"
+            class="border-slate-300 border-2 border-solid bg-bgPrimary p-4 w-max rounded-lg text-xl font-bold"
           >
             Donation
           </button>
           <button
             id="btn-history"
-            class="border-slate-500 border-2 border-solid p-4 w-max rounded-lg text-xl text-[#111111B3] font-bold"
+            class="border-slate-300 border-2 border-solid p-4 w-max rounded-lg text-xl text-[#111111B3] font-bold"
           >
             History
           </button>
         </div>
+      </nav>
+    </header>
 
+    <main>
+      <section>
         <!-- Donation Button Sections Starts -->
 
         <section id="donation-section" class="">

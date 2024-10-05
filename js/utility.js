@@ -82,13 +82,17 @@ function donationCounterQuota(balance, donation) {
 // Donation History 
 function showDonationHistory() {
     document.getElementById('donation-section').classList.add("hidden");
+    document.getElementById('btn-donate').classList.remove("bg-bgPrimary");
     document.getElementById('history-section').classList.remove("hidden");
+    document.getElementById('btn-history').classList.add("bg-bgPrimary");
 }
 
 // Donation Category
 
 function showDonationCategory() {
     document.getElementById('donation-section').classList.remove("hidden");
+    document.getElementById('btn-donate').classList.add("bg-bgPrimary");
     document.getElementById('history-section').classList.add("hidden");
+    document.getElementById('btn-history').classList.remove("bg-bgPrimary");
 }
 
